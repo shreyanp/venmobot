@@ -17,7 +17,7 @@ def waitTillDate(spec_date, spec_time):
     minute = spec_time.minute
 
 
-
+@st.cache_resource
 def loginVenmo(number1, password1):
     options = Options()
     options.add_experimental_option("detach", True)
