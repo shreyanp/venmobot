@@ -27,7 +27,7 @@ def loginVenmo(number1, password1):
     options.add_argument("--disable-features=NetworkService")
     options.add_argument("--window-size=1920x1080")
     options.add_argument("--disable-features=VizDisplayCompositor")
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager(version="116.0.5856.96").install()), options=options)
 
     #number1 = "6126668708"
     #Go to website
