@@ -1,4 +1,6 @@
 selenium
 webdriver_manager
 schedule
-chromium-chromedriver
+streamlit
+seleniumbase
+
