@@ -16,8 +16,8 @@ def waitTillDate(spec_date, spec_time):
     hour = spec_time.hour
     minute = spec_time.minute
 
-
-def loginVenmo(number1, password1):
+@st.cache_resource
+def get_driver():
     options = Options()
     options.add_experimental_option("detach", True)
     options.add_argument('--headless')
@@ -28,7 +28,10 @@ def loginVenmo(number1, password1):
     options.add_argument("--window-size=1920x1080")
     options.add_argument("--disable-features=VizDisplayCompositor")
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+    return driver
 
+def loginVenmo(number1, password1):
+    driver = get_driver()
     #number1 = "6126668708"
     #Go to website
     driver.get("https://venmo.com/account/sign-in")
