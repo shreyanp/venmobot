@@ -1,4 +1,4 @@
-selenium == 4.11
+selenium
 webdriver_manager
 schedule
 streamlit
