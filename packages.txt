@@ -1,2 +1,1 @@
-chromium
-Selenium.WebDriver.ChromeDriver -Version 116.0.5845.4200-beta
+
