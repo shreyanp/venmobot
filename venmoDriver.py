@@ -1,12 +1,9 @@
 from selenium import webdriver
-#from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
-#from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
-from selenium.common.exceptions import NoSuchElementException
 import schedule
 import time
 
@@ -19,11 +16,11 @@ def waitTillDate(spec_date, spec_time):
     minute = spec_time.minute
 
 
+
 def loginVenmo(number1, password1):
-    options = webdriver.FirefoxOptions()
-    options.add_argument('--headless')
-    options.add_argument('--disable-gpu')
-    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+    options = Options()
+    options.add_experimental_option("detach", True)
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
     
     #number1 = "6126668708"
     #Go to website
